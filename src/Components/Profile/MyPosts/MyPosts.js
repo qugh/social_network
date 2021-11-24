@@ -1,20 +1,23 @@
-import p from './MyPosts.module.css'
+import p from './MyPosts.module.scss'
 import Post from "./Posts/MyPost";
-const MyPosts = () => {
+const MyPosts = (props) => {
+
     return (
-<div>
-            <div className="">
-                My posts
-                <div className="">New post</div>
+        <>
+            <div>
+               <h3 className={p.p1}>My posts</h3>
+               <div className={p.new_post}> <textarea></textarea>
+                    <button>New post</button>
+
+               </div>
             </div>
 <div className={p.posts}>
-    <Post/>
-    <Post/>
-    <Post/>
-    <Post/>
-</div>
+
+    {props.items.map( (post,key)=> (<Post key={post.id} message={post.message} id={post.id} likesCount={post.likesCount}/>)) }
 
 </div>
+        </>
+
     );
 }
 

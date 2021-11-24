@@ -1,0 +1,50 @@
+.message_avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+
+}
+
+.message {
+display:grid;
+margin-bottom:20px;
+  .message_container{
+  display:flex;
+    align-items: center;
+    margin-bottom:5px;
+
+  }
+  .self_message{
+    justify-self:end;
+    color:blue;
+
+  }
+  .message_from{
+    color:gray;
+    justify-self:start;
+  }
+
+  .user_last_self_message{
+
+    background:#DBF1FF;
+    border:10px solid #DBF1FF;
+    border-radius:10px;
+  }
+  .user_last_message_from{
+    background:#F2F6F9;
+border:10px solid #F2F6F9;
+    border-radius:10px;
+  }
+  .user_last_message {
+    margin-bottom: 10px;
+  justify-self: end;
+
+  max-width:550px;
+
+   /* &:last-child {
+      margin: 0;
+    }*/
+  }
+}

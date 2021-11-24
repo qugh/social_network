@@ -1,0 +1,38 @@
+.friends_container {
+  grid-area: f;
+  background: yellow;
+}
+
+h3 {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.friends_block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  grid-gap: 5px;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      box-shadow: inset 5em 1em rgba(255, 208, 25, 0.4);
+      border-radius:5px;
+    }
+  }
+}
+
+.friend_image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.friend_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;;
+}

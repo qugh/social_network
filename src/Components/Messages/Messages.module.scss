@@ -1,0 +1,29 @@
+.dialogs_page {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+
+  .dialogs {
+
+    .message_item {
+
+    }
+  }
+
+  .messages {
+    margin-bottom: 10px;
+    display:grid;
+
+  .friend_message{
+  justify-self:left;
+    padding-right:60px;
+
+
+  }
+    .self_message{
+  justify-self:end;
+      padding-right:60px;
+    }
+
+  }
+
+}

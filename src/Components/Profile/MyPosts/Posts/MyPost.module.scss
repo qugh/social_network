@@ -1,0 +1,22 @@
+
+.item{
+    color: #72bdfa;
+    display:flex;
+    align-items: center;
+}
+.item img{
+    width:50px !important;
+    height: 50px;
+    object-fit: cover;
+    border-radius:50%;
+    margin-right:10px;
+}
+.message{
+    max-width:600px;
+    color:black;
+}
+.message_block{
+    display:flex;
+    flex-direction: column;
+
+}
