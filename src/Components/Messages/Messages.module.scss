@@ -1,7 +1,6 @@
 .dialogs_page {
   display: grid;
   grid-template-columns: 2fr 8fr;
-
   .dialogs {
 
     .message_item {
@@ -12,7 +11,15 @@
   .messages {
     margin-bottom: 10px;
     display:grid;
+    grid-template-rows: repeat(12,1fr);
+    height:800px;
 
+  .dialog_with_user{
+
+    grid-row:span 11;
+    overflow-y:scroll;
+    overflow-x:hidden;
+  }
   .friend_message{
   justify-self:left;
     padding-right:60px;

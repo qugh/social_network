@@ -1,0 +1,41 @@
+.message_container {
+  display: flex;
+  grid-row:span 1;
+  align-self:end;
+  align-items:center;
+  .message_text {
+    width: 550px;
+    position:relative;
+    min-height: 40px;
+    max-height:60px;
+    margin-right:20px;
+    border:1px solid cadetblue;
+    resize:none;
+    outline:none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    line-height: 17px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    transition: border-bottom-color .3s linear;
+    padding:10px;
+  }
+  .message_text:empty:before{
+    position:relative;
+
+    content:attr(text);
+    color:gray
+  }
+
+  .send_message{
+    color:white;
+    background:cadetblue;
+    border:0;
+    border-radius:20px;
+    padding: 0px 40px;
+    cursor:pointer;
+    resize:none;
+    height:40px;
+    align-self:center;
+  }
+}

@@ -10,9 +10,12 @@ export const Profile = (props) => {
         <>
 
             <ProfileInfo/>
-            <MyPosts items={props.state.posts}/>
+
+            <MyPosts items={props.profilePage.posts} addPost={props.addPost} changeNewPost={props.changeNewPOst} newPostText={props.profilePage.newPostText}/>
+
         </>
 
     );
+
 }
 export default Profile;

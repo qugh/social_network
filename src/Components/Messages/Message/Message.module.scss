@@ -13,7 +13,7 @@ margin-bottom:20px;
   .message_container{
   display:flex;
     align-items: center;
-    margin-bottom:5px;
+    margin-bottom:10px;
 
   }
   .self_message{
@@ -27,7 +27,7 @@ margin-bottom:20px;
   }
 
   .user_last_self_message{
-
+    justify-self: end;
     background:#DBF1FF;
     border:10px solid #DBF1FF;
     border-radius:10px;
@@ -36,10 +36,11 @@ margin-bottom:20px;
     background:#F2F6F9;
 border:10px solid #F2F6F9;
     border-radius:10px;
+
   }
   .user_last_message {
     margin-bottom: 10px;
-  justify-self: end;
+
 
   max-width:550px;
 

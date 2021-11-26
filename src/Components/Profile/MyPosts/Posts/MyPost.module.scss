@@ -3,6 +3,7 @@
     color: #72bdfa;
     display:flex;
     align-items: center;
+    margin-bottom:10px;
 }
 .item img{
     width:50px !important;
@@ -13,6 +14,7 @@
 }
 .message{
     max-width:600px;
+    word-wrap: break-word;
     color:black;
 }
 .message_block{
