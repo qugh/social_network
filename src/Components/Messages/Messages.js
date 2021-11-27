@@ -29,7 +29,7 @@ export const Messages = (props) => {
             </div>
             <div className={s.messages}>
                 <div className={s.dialog_with_user}>{dialog_with_user}</div>
-                <SendMessage sendMessage={props.sendMessage} updateMessageText={props.updateMessageText} currentText={props.state.newMessageText} />
+                <SendMessage dispatch={props.dispatch} currentText={props.state.newMessageText} />
             </div>
         </div>
     )

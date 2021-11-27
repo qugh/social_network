@@ -18,13 +18,13 @@ const App = (props) => {
                 <Friends state={props.state.profilePage.friends}/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="*" element={<Profile  profilePage={props.state.profilePage} addPost={props.addPost} />}/>
+                        <Route path="*" element={<Profile  profilePage={props.state.profilePage} dispatch={props.dispatch} />}/>
                         <Route path="/profile"
                                element={<Profile
-                                   profilePage={props.state.profilePage}  addPost={props.addPost} changeNewPOst={props.changeNewPost} />}/>
+                                   profilePage={props.state.profilePage} dispatch={props.dispatch} />}/>
                         <Route path="/messages/*"
                                element={<Messages
-                                   state={props.state.messagesPage} sendMessage={props.sendMessage} updateMessageText={props.updateMessageText} />}/>
+                                   state={props.state.messagesPage} dispatch={props.dispatch} />}/>
                     </Routes>
                 </div>
             </div>

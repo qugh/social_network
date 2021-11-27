@@ -5,21 +5,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom'
-import {store} from './Redux/state'
+import store from './Redux/state'
 
-let rerenderTree = () => {
+let rerenderTree = (state) => {
 
     ReactDOM.render(
         <Router>
             <React.StrictMode>
-                <App state={store.getState()} addPost={store.addPost} changeNewPost={store.updateNewPostText}
-                     sendMessage={store.sendMessage} updateMessageText={store.updateTextMessage}/>
+                <App state={state} dispatch={store.dispatch.bind(store)}/>
             </React.StrictMode>
         </Router>,
         document.getElementById('root')
     );
 
 }
+rerenderTree(store.getState())
 store.subscribe(rerenderTree);
 
 

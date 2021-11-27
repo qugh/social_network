@@ -1,47 +1,4 @@
-export let store = {
-
-    _subscriber(observer) {
-        {
-            console.log('no observers here')
-        }
-
-    },
-    subscribe(observer) {
-        this._subscriber = observer;
-        observer();
-    },
-    getState() {
-        return this._state;
-    },
-    addPost() {
-        if (this._newPost.message) {
-            this._state.profilePage.posts.push(this._newPost)
-            this._state.profilePage.newPostText = ''
-        } else {
-            alert('Вы ничего не написали')
-        }
-        this._subscriber()
-    },
-    updateNewPostText(text) {
-        this._state.profilePage.newPostText = text;
-        this._subscriber()
-        /*console.log(this._state.profilePage.newPostText)*/
-    },
-
-    sendMessage() {
-
-        if (this._newMessage) {
-            this._state.messagesPage.messages.push(this._newMessage);
-        } else {
-            alert('Сообщение пустое!')
-        }
-        this._state.messagesPage.newMessageText = '';
-        this._subscriber()
-    },
-    updateTextMessage(newMessageText) {
-        this._state.messagesPage.newMessageText = newMessageText
-        this._subscriber()
-    },
+let store = {
     _state: {
         profilePage: {
             posts: [
@@ -80,11 +37,67 @@ export let store = {
 
             ]
 
+        }
+    },
+    _subscriber() {
+        console.log('no observers here')
+    },
+    subscribe(observer) {
+        this._subscriber = observer;
+    },
+    getState() {
+        debugger;
+        return this._state;
+    },
 
-        },
 
 
 
+
+    dispatch(action) { // {type : 'ADD-POST', etc.} required
+        if(action.type==='ADD-POST'){
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likesCount: 10
+            };
+            if (newPost.message) {
+                this._state.profilePage.posts.push(newPost)
+                this._state.profilePage.newPostText = ''
+
+            } else {
+                alert('Вы ничего не написали')
+            }
+            this._subscriber(this._state)
+        }
+        else if (action.type==='UPDATE-NEW-POST-TEXT'){
+            this._state.profilePage.newPostText = action.newText;
+            this._subscriber(this._state)
+        }
+        else if ( action.type ==='SEND-MESSAGE'){
+            let newMessage = {
+                id: 5,
+                text: this._state.messagesPage.newMessageText,
+                type: 'self'
+            };
+
+            if (newMessage.text) {
+                this._state.messagesPage.messages.push(newMessage);
+            } else {
+                alert('Сообщение пустое!')
+            }
+            this._state.messagesPage.newMessageText = '';
+            this._subscriber(this._state)
+        }
+        else if ( action.type === 'UPDATE-NEW-TEXT-MESSAGE'){
+
+            this._state.messagesPage.newMessageText = action.newMessageText
+            this._subscriber(this._state)
+        }
     }
-}
+
+};
+
+
 export default store;
+window.store = store;
